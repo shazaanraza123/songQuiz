@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Song Guesser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-section">
+            <h1>Playlist Song Guesser</h1>
+            <p>Test your music knowledge by guessing songs from your playlist!</p>
+            <button id="login-button">Login with Spotify</button>
+        </div>
+
+        <div id="game-section" style="display: none;">
+            <div class="header">
+                <h2>Score: <span id="score">0</span></h2>
+                <h3>Round: <span id="round">1</span>/10</h3>
+            </div>
+
+            <div class="playlist-input">
+                <input type="text" id="playlist-url" placeholder="Enter Spotify Playlist URL">
+                <button id="start-game">Start Game</button>
+            </div>
+
+            <div class="timer" id="timer" style="display:none;"></div>
+            <div id="game-content" style="display: none;">
+                <div class="player-container">
+                    <div id="player"></div>
+                </div>
+                <div class="options-container">
+                    <div id="options"></div>
+                </div>
+                <div class="controls">
+                    <button id="skip-button">Skip Song</button>
+                </div>
+            </div>
+            <div class="leaderboard" id="leaderboard" style="display:none;">
+                <h3>Leaderboard</h3>
+                <ul class="leaderboard-list" id="leaderboard-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
