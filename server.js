@@ -40,12 +40,13 @@ app.get('/callback', async (req, res) => {
       }
     });
     // Send the access token to the frontend (you can use a redirect with a query param, or set a cookie)
-    res.redirect('http://127.0.0.1:8000/?access_token=' + response.data.access_token);
+    res.redirect('https://your-netlify-site.netlify.app/?access_token=' + response.data.access_token);
   } catch (err) {
     res.send('Error getting tokens: ' + err);
   }
 });
 
-app.listen(8888, () => {
-  console.log('Backend server running on http://127.0.0.1:8888');
+const PORT = process.env.PORT || 8888;
+app.listen(PORT, () => {
+  console.log(`Backend server running on port ${PORT}`);
 });
